@@ -48,6 +48,14 @@ typedef struct {
      * TODO: You will need to add more fields to this structure
      *       to efficiently implement q_size and q_insert_tail
      */
+    /**
+     * @brief Pointer to the last element in the queue, or NULL if the
+     *        queue is empty.
+     */
+    list_ele_t *tail;
+    /**
+     * @brief Size.
+    */
     size_t size;
 } queue_t;
 

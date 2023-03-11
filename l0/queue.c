@@ -26,7 +26,11 @@
 queue_t *queue_new(void) {
     queue_t *q = malloc(sizeof(queue_t));
     /* What if malloc returned NULL? */
+    if (q == NULL) {
+        return NULL;
+    }
     q->head = NULL;
+    q->size = 0;
     return q;
 }
 
@@ -135,8 +139,10 @@ bool queue_remove_head(queue_t *q, char *buf, size_t bufsize) {
 size_t queue_size(queue_t *q) {
     /* You need to write the code for this function */
     /* Remember: It should operate in O(1) time */
-    return sizeof(q);
-    return 0;
+    if (q == NULL) {
+        return 0;
+    }
+    return q->size;
 }
 
 /**

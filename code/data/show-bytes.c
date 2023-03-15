@@ -22,13 +22,21 @@ void show_pointer(void* x) {
     show_bytes((byte_pointer) &x, sizeof(void *));
 }
 
+void show_short(short val) {
+    show_bytes((byte_pointer) &val, sizeof(short));
+}
+
 void test_show_bytes(int val) {
     int ival = val;
     float fval = (float) ival;
     int* pval = &ival;
+    short sval = (short) ival;
+    short minus_sval = -1 * sval;
     show_int(ival);
     show_float(fval);
     show_pointer(pval);
+    show_short(sval);
+    show_short(minus_sval);
 }
 
 int main() {
